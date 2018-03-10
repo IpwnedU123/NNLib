@@ -1,0 +1,26 @@
+<?php
+/*
+ * NNLib Config
+ * by Cyuubi
+ */
+
+$config = array(
+	// Nintendo Network info
+	"apiEndpoint" => "https://account.nintendo.net/v1/api/",
+	"sslCert" => __DIR__ . "/certs/ctr-common-1.pem",
+	"clientId" => "ea25c66c26b403376b4c5ed94ab9cdea",
+	"clientSecret" => "d137be62cb6a2b831cad8c013b92fb55",
+
+	// Device info
+	"device" => array(
+		"platformId" => /* <YOUR_PLATFORMID> */,
+		"deviceType" => /* <YOUR_DEVICETYPE> */,
+		"deviceId" => /* <YOUR_DEVICEID> */,
+		"serialNumber" => "<YOUR_SERIALNUMBER>",
+		"systemVersion" => /* <YOUR_SYSTEMVERSION> */,
+		"region" => /* <YOUR_SYSTEMVERSION> */,
+		"country" => "<YOUR_COUNTRY>",
+		"environment" => "<YOUR_ENVIRONMENT>",
+		"deviceCert" => "<YOUR_DEVICECERT>"
+	)
+);
