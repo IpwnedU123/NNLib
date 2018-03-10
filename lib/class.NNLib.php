@@ -22,57 +22,57 @@ class NNLib {
      * Description: Validates a username
      * Return: [true|false]
      */
-	function validateUsername($username) {
+    function validateUsername($username) {
         // Init cURL
-    	$ch = curl_init();
+        $ch = curl_init();
 
         // Set cURL Options
-    	curl_setopt_array($ch, array(
-    		CURLOPT_SSL_VERIFYPEER => 0,
-    	    CURLOPT_RETURNTRANSFER => true,
-    	    CURLOPT_SSLCERT => $this->config["sslCert"],
-    	    CURLOPT_HTTPHEADER => array(
-    	        "X-Nintendo-Client-ID: " . $this->config["clientId"],
-    	        "X-Nintendo-Client-Secret: " . $this->config["clientSecret"]
-        	)
-    	));
+        curl_setopt_array($ch, array(
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSLCERT => $this->config["sslCert"],
+            CURLOPT_HTTPHEADER => array(
+                "X-Nintendo-Client-ID: " . $this->config["clientId"],
+                "X-Nintendo-Client-Secret: " . $this->config["clientSecret"]
+            )
+        ));
 
         // Set cURL request URL
-    	curl_setopt($ch, CURLOPT_URL, $this->config["apiEndpoint"] . "people/" . $username);
+        curl_setopt($ch, CURLOPT_URL, $this->config["apiEndpoint"] . "people/" . $username);
 
         // Check if empty and execute
-    	return empty(curl_exec($ch));
-	}
+        return empty(curl_exec($ch));
+    }
 
     /*
      * validateEmail([EMAIL(STRING)]);
      * Description: Validates a email
      * Return: [true|false]
      */
-	function validateEmail($email) {
+    function validateEmail($email) {
         // Init cURL
-    	$ch = curl_init();
+        $ch = curl_init();
 
         // Set cURL Options
-    	curl_setopt_array($ch, array(
-    		CURLOPT_SSL_VERIFYPEER => 0,
-    	    CURLOPT_RETURNTRANSFER => true,
-    	    CURLOPT_SSLCERT => $this->config["sslCert"],
-    	    CURLOPT_POST => 1,
-    	    CURLOPT_POSTFIELDS => "email=" . $email,
-    	    CURLOPT_HTTPHEADER => array(
-    	    	"Content-Type: application/x-www-form-urlencoded",
-    	        "X-Nintendo-Client-ID: " . $this->config["clientId"],
-    	        "X-Nintendo-Client-Secret: " . $this->config["clientSecret"]
-        	)
-    	));
+        curl_setopt_array($ch, array(
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSLCERT => $this->config["sslCert"],
+            CURLOPT_POST => 1,
+            CURLOPT_POSTFIELDS => "email=" . $email,
+            CURLOPT_HTTPHEADER => array(
+                "Content-Type: application/x-www-form-urlencoded",
+                "X-Nintendo-Client-ID: " . $this->config["clientId"],
+                "X-Nintendo-Client-Secret: " . $this->config["clientSecret"]
+            )
+        ));
 
         // Set cURL request URL
-    	curl_setopt($ch, CURLOPT_URL, $this->config["apiEndpoint"] . "support/validate/email");
+        curl_setopt($ch, CURLOPT_URL, $this->config["apiEndpoint"] . "support/validate/email");
 
         // Check if empty and execute
-    	return empty(curl_exec($ch));
-	}
+        return empty(curl_exec($ch));
+    }
 
     /*
      * createAccount([DATA(ARRAY)]);
